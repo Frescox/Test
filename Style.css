@@ -75,7 +75,7 @@ main{
 }
 
 .BtnAdd{
-    top: 34.5rem;
+    top: 68%;
     background-color: #F8E48C;
     width: 60%;
     height: 10%;
@@ -92,7 +92,7 @@ main{
 }
 
 .BtnRemove{
-    top: 41.5rem;
+    top: 80%;
     background-color: #F8E48C;
     width: 60%;
     height: 10%;
@@ -140,7 +140,7 @@ main{
     background-repeat: no-repeat;
     width: 19%;
     height: 7.5%;
-    top: 49.4rem;
+    top: 95.5%;
     position: fixed;
     z-index: 1;
     left: 11%;

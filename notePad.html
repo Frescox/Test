@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado Virtual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Mottie/Keyboard/master/dist/css/keyboard.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.rawgit.com/Mottie/Keyboard/master/dist/jquery.keyboard.min.js"></script>
+    <link rel="stylesheet" href="styleTwo.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="notePadContainer">
+        <textarea id = textInput placeholder="Escribe aquí..." rows="5"></textarea>
+    </div>
+    <div id = "keyboard"></div>
+    
+    <footer>
+        <button id = "BtnGoBack" class = "BtnGoBack"></button>
+    </footer>
+    <script>
+        // Redirigir al hacer clic en el botón
+        document.getElementById("BtnGoBack").onclick = function() {
+            setTimeout(function() {
+            window.location.href = "index.html"; // Cambia esta URL a la página a la que quieres redirigir
+        }, 500); // Debe coincidir con la duración de la transición en CSS
+        };
+    
+    </script>
+    <script src = "notepad.js"></script>
+</body>
+</html>

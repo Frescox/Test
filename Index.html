@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Notes</title>
+</head>
+<body>
+    <header>
+        <label class = "container_Notes_Created">
+            <p class = "notes_Created">Notas creadas</p>
+        </label>
+        <label class = "container_Text">
+            <p class = "text">Hola mi nombre es...</p>
+        </label>
+    </header>
+
+    <main>
+        <label class = "notePad"></label>
+        <div id="noteContainer" class="notePadContainer"></div>
+        <button id ="newNoteBtn" class = "BtnAdd">Nueva nota</button>
+        <button class = "BtnRemove">Borrar Nota</button>
+        <button class = "BtnGoBack"></button>
+    </main>
+
+    <footer>
+
+    </footer>
+    
+    <script></script>
+    <script>
+        // Redirigir al hacer clic en el botón
+        document.getElementById("newNoteBtn").onclick = function() {
+            setTimeout(function() {
+            window.location.href = "notePad.html"; // Cambia esta URL a la página a la que quieres redirigir
+        }, 500); // Debe coincidir con la duración de la transición en CSS
+        };
+        // sjdnfpadfjpsrignsp tiungsptsbcndgnpxtbnsptkjw
+    
+    </script>
+</body>
+</html>

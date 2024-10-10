@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8EAAF5;
+    text-align: center;
+    color: #FFF2F2;
+    font-family: "Dosis", sans-serif;
+
+}
+
+header {
+    background-color: #8EAAF5;
+    color: #8EAAF5;
+    font-weight: 800;
+    font-size: 60px;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.container_Notes_Created{
+    font-family: "Roboto";
+    font-size: 30px;
+    color: #FBE48C;
+    font-weight: bold;
+    height: 65px;
+    position: fixed;
+}
+
+.notes_Created{
+    margin-top: 20px;
+    padding: 0;
+}
+
+.container_Text{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    background-color: white;
+    top: 10%;
+    position: fixed;
+}
+
+.text{
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 30px;
+    color: #5f8aea;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+main{
+    justify-content: center;
+    display: grid;
+}
+
+.notePad{
+    background-image: url("background_notePad.png");
+    background-size: cover;
+    width: 30%;
+    height: 40%;
+    max-height: 270px;
+    min-width: 170px;
+    margin-top: 150px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    transition: filter 0.3s ease, transform 0.2s ease;
+
+}
+
+.BtnAdd{
+    top: 36rem;
+    background-color: #F8E48C;
+    width: 50%;
+    height: 70px;
+    position: fixed;
+    border-radius: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color:#F8E48C ;
+    font-family: "Roboto";
+    font-size: 40px;
+    color: #8EAAF5;
+    font-weight: bold;
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.BtnRemove{
+    top: 42.5rem;
+    background-color: #F8E48C;
+    width: 50%;
+    height: 70px;
+    position: fixed;
+    border-radius: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color:#F8E48C ;
+    font-family: "Roboto";
+    font-size: 40px;
+    color: #8EAAF5;
+    font-weight: bold;
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilos para el contenedor de la nota (cuaderno) */
+.notePadContainer {
+    display: none; /* Inicialmente oculto */
+    background-image: url("background_notePad.png"); /* Imagen de la hoja de cuaderno */
+    background-size: contain;
+    background-repeat: repeat;
+    width: 100%; /* Ajustar según el diseño deseado */
+    height: 85%; /* Ajustar según el diseño deseado */
+    max-width: 600px;
+    max-height: 800px;
+    margin: 50px auto;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    z-index: 10; /* Asegurarse de que esté encima de otros elementos */
+}
+
+/* Mostrar el contenedor cuando se activa */
+.notePadContainer.show {
+    display: block;
+}
+
+
+.BtnGoBack {
+    background-image: url("Botones-03.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 19%;
+    height: 7.5%;
+    top: 49.4rem;
+    position: fixed;
+    z-index: 1;
+    left: 11%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.BtnRemove:hover, .BtnAdd:hover, .BtnGoBack:hover{
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+.BtnRemove:active, .BtnAdd:active, .BtnGoBack:active{
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+
+
+footer {
+    background-color: #F8E48C;
+    color: #FFF2F2;
+    text-align: center;
+    padding: 38px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 350px) {
+    .BtnAdd {
+        width: 66%;  
+        height: 7%;
+        top: 33rem;
+        left: 50%;
+        font-size: 25px;
+        transform: translate(-50%, -50%);
+    }
+    .BtnRemove {
+        width: 66%;  
+        height: 7%;
+        top: 37rem;
+        left: 50%;
+        font-size: 25px;
+        transform: translate(-50%, -50%);
+    }
+    .BtnGoBack{
+        top: 43.6rem;
+        left: 15%;
+        height: 10%;
+        width: 22%;
+    }
+}
+
+.fade-out {
+    opacity: 0; /* Desvaneciendo la página */
+    transform: translateY(10px); /* Opcional: desplazamiento hacia abajo */
+}

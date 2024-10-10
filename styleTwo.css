@@ -31,6 +31,7 @@ body {
     background-repeat: no-repeat;
     width: 19%;
     height: 7.5%;
+    top: 95.6%;
     position: fixed;
     z-index: 1;
     left: 11%;
@@ -85,8 +86,8 @@ footer {
 
 @media only screen and (max-width: 350px) {
     .BtnGoBack {
-        top: 43.6rem;
-        left: 15%;
+        top: 95.6;
+        left: 16%;
         height: 10%;
         width: 22%;
     }

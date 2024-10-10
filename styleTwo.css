@@ -8,21 +8,21 @@ body {
 }
 
 .notePadContainer {
-    display: grid; /* Usar grid para centrar el contenido */
+    display: grid;
     background-size: contain;
-    background-repeat: no-repeat; /* Cambiar a no-repeat si solo se quiere una imagen de fondo */
-    width: 90%; /* Ajustar según el diseño deseado */
-    height: 70%; /* Ajustar según el diseño deseado */
-    max-width: 700px;
-    max-height: 800px;
-    margin: 50px auto;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 80%;
     position: fixed;
-    top: 25%; /* Cambiar la posición si es necesario */
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra para mejorar la visibilidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow:hidden; /*Evita contenido desvordado*/
+
 }
+
 
 .BtnGoBack {
     background-image: url("Botones-03.png");
@@ -52,25 +52,17 @@ body {
 
 #textInput {
     font-family: "Roboto";
-    margin-top: 70%;
     display: grid;
     width: 100%;
-    height: 100%;
-    max-height: 800rem;
+    height: 99%; 
     border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;  
-    background-image: url("background_notePad.png"); /* Imagen de la hoja de cuaderno */
-    margin-left: 0%;
-    transform: translate(0%, -50%);
-}
-
-/* Estilos específicos para el teclado */
-.keyboard {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 5px;
-    margin-top: 20px;
+    font-size: 32px;
+    background-image: url("background_notePad.png");
+    background-size: cover;
+    background-position: center;
+    padding-left: 20px;
+    padding-top: 25px;
+    line-height: 50px
 }
 
 footer {
@@ -84,7 +76,7 @@ footer {
     z-index: 10;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 600px) {
     .BtnGoBack {
         top: 95.6;
         left: 16%;
@@ -92,7 +84,53 @@ footer {
         width: 22%;
     }
 
-    .notePadContainer {
+    #textInput {
         top: 55%;
+        
+    }
+}
+
+/* Estilo general del teclado */
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+/* Estilo para botones del teclado */
+.keyboard button {
+    background-color: #8EAAF5; /* Color azul claro para las teclas */
+    color: white; /* Color del texto en blanco */
+    font-size: 18px; /* Tamaño de la fuente */
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Suavizado del cambio de color */
+}
+
+/* Estilo para los botones especiales (Shift, Enter, Backspace) */
+.keyboard button.special {
+    background-color: #F8E48C; /* Color amarillo para botones especiales */
+    color: black; /* Texto en negro */
+}
+
+/* Hover: Cambia el color al pasar el ratón sobre el botón */
+.keyboard button:hover {
+    background-color: #729BDA; /* Color más oscuro al hacer hover */
+}
+
+/* Estilo específico para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .keyboard {
+        grid-template-columns: repeat(20, 1fr); /* 20 columnas para teléfonos */
+    }
+
+    .keyboard button {
+        padding: 10px; /* Tamaño reducido en móviles */
+        font-size: 16px; /* Ajustar el tamaño de la fuente */
+        border-radius: 8px; /* Bordes redondeados */
     }
 }

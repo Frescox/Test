@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teclado Virtual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdn.rawgit.com/Mottie/Keyboard/master/dist/css/keyboard.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,7 +19,22 @@
     <div class="notePadContainer">
         <textarea id = textInput placeholder="Escribe aquí..." rows="5"></textarea>
     </div>
-    <div id = "keyboard"></div>
+    <div id = "keyboard"> <button>Q</button>
+        <button>W</button>
+        <button>E</button>
+        <button>R</button>
+        <button>T</button>
+        <button>Y</button>
+        <button>U</button>
+        <button>I</button>
+        <button>O</button>
+        <button>P</button>
+        
+        <!-- Botones especiales como Shift, Enter, etc. -->
+        <button class="special">Shift</button>
+        <button class="special">Enter</button>
+        <button class="special">Backspace</button>
+    </div>
     
     <footer>
         <button id = "BtnGoBack" class = "BtnGoBack"></button>

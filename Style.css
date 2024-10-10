@@ -6,7 +6,6 @@ body {
     text-align: center;
     color: #FFF2F2;
     font-family: "Dosis", sans-serif;
-
 }
 
 header {
@@ -20,7 +19,7 @@ header {
     justify-content: center;
 }
 
-.container_Notes_Created{
+.container_Notes_Created {
     font-family: "Roboto";
     font-size: 30px;
     color: #FBE48C;
@@ -29,12 +28,12 @@ header {
     position: fixed;
 }
 
-.notes_Created{
+.notes_Created {
     margin-top: 20px;
     padding: 0;
 }
 
-.container_Text{
+.container_Text {
     width: 100%;
     height: 10%;
     position: absolute;
@@ -43,7 +42,7 @@ header {
     position: fixed;
 }
 
-.text{
+.text {
     text-align: center;
     font-family: "Roboto";
     font-size: 30px;
@@ -52,12 +51,12 @@ header {
     margin-top: 20px;
 }
 
-main{
+main {
     justify-content: center;
     display: grid;
 }
 
-.notePad{
+.notePad {
     background-image: url("background_notePad.png");
     background-size: cover;
     width: 30%;
@@ -71,10 +70,9 @@ main{
     transform: translate(-50%, -50%);
     position: fixed;
     transition: filter 0.3s ease, transform 0.2s ease;
-
 }
 
-.BtnAdd{
+.BtnAdd {
     top: 68%;
     background-color: #F8E48C;
     width: 60%;
@@ -83,7 +81,7 @@ main{
     border-radius: 15px;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-color:#F8E48C ;
+    border-color: #F8E48C;
     font-family: "Roboto";
     font-size: 35px;
     color: #8EAAF5;
@@ -91,7 +89,7 @@ main{
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-.BtnRemove{
+.BtnRemove {
     top: 80%;
     background-color: #F8E48C;
     width: 60%;
@@ -100,7 +98,7 @@ main{
     border-radius: 15px;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-color:#F8E48C ;
+    border-color: #F8E48C;
     font-family: "Roboto";
     font-size: 35px;
     color: #8EAAF5;
@@ -108,14 +106,13 @@ main{
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-/* Estilos para el contenedor de la nota (cuaderno) */
 .notePadContainer {
-    display: none; /* Inicialmente oculto */
-    background-image: url("background_notePad.png"); /* Imagen de la hoja de cuaderno */
+    display: none;
+    background-image: url("background_notePad.png");
     background-size: contain;
     background-repeat: repeat;
-    width: 100%; /* Ajustar según el diseño deseado */
-    height: 85%; /* Ajustar según el diseño deseado */
+    width: 100%;
+    height: 85%;
     max-width: 600px;
     max-height: 800px;
     margin: 50px auto;
@@ -124,14 +121,12 @@ main{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
-    z-index: 10; /* Asegurarse de que esté encima de otros elementos */
+    z-index: 10;
 }
 
-/* Mostrar el contenedor cuando se activa */
 .notePadContainer.show {
     display: block;
 }
-
 
 .BtnGoBack {
     background-image: url("Botones-03.png");
@@ -150,16 +145,14 @@ main{
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-.BtnRemove:hover, .BtnAdd:hover, .BtnGoBack:hover{
+.BtnRemove:hover, .BtnAdd:hover, .BtnGoBack:hover {
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
 }
 
-.BtnRemove:active, .BtnAdd:active, .BtnGoBack:active{
+.BtnRemove:active, .BtnAdd:active, .BtnGoBack:active {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transform: translate(-50%, -50%) scale(0.95);
 }
-
-
 
 footer {
     background-color: #F8E48C;
@@ -171,32 +164,8 @@ footer {
     width: 100%;
 }
 
-@media only screen and (max-width: 350px) {
-    .BtnAdd {
-        width: 80%;  
-        height: 7%;
-        top: 32rem;
-        left: 50%;
-        font-size: 10px;
-        transform: translate(-50%, -50%);
-    }
-    .BtnRemove {
-        width: 80%;  
-        height: 7%;
-        top: 35.5rem;
-        left: 50%;
-        font-size: 10px;
-        transform: translate(-50%, -50%);
-    }
-    .BtnGoBack{
-        top: 95%;
-        left: 15%;
-        height: 10%;
-        width: 22%;
-    }
-}
 
 .fade-out {
-    opacity: 0; /* Desvaneciendo la página */
-    transform: translateY(10px); /* Opcional: desplazamiento hacia abajo */
+    opacity: 0;
+    transform: translateY(10px);
 }

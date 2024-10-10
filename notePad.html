@@ -9,30 +9,27 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdn.rawgit.com/Mottie/Keyboard/master/dist/css/keyboard.min.css">
+    <link rel="stylesheet" href="styleTwo.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.rawgit.com/Mottie/Keyboard/master/dist/jquery.keyboard.min.js"></script>
-    <link rel="stylesheet" href="styleTwo.css">
-    <title>Document</title>
+    <script src="notepad.js"></script>
 </head>
 <body>
     <div class="notePadContainer">
-        <textarea id = textInput placeholder="Escribe aquí..." rows="5"></textarea>
+        <textarea id="textInput" placeholder="Escribe aquí..." rows="5"></textarea>
     </div>
-    <div id = "keyboard"></div>
+    <div id="keyboard"></div>
     
     <footer>
-        <button id = "BtnGoBack" class = "BtnGoBack"></button>
+        <button id="BtnGoBack" class="BtnGoBack"></button>
     </footer>
     <script>
-        // Redirigir al hacer clic en el botón
         document.getElementById("BtnGoBack").onclick = function() {
             setTimeout(function() {
-            window.location.href = "index.html"; // Cambia esta URL a la página a la que quieres redirigir
-        }, 500); // Debe coincidir con la duración de la transición en CSS
+                window.location.href = "index.html"; 
+            }, 500);
         };
-    
     </script>
-    <script src = "notepad.js"></script>
 </body>
 </html>

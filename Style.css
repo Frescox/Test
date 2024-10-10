@@ -78,7 +78,7 @@ main{
     top: 36rem;
     background-color: #F8E48C;
     width: 50%;
-    height: 70px;
+    height: 10%;
     position: fixed;
     border-radius: 15px;
     left: 50%;
@@ -95,7 +95,7 @@ main{
     top: 42.5rem;
     background-color: #F8E48C;
     width: 50%;
-    height: 70px;
+    height: 10%;
     position: fixed;
     border-radius: 15px;
     left: 50%;
@@ -177,7 +177,7 @@ footer {
         height: 7%;
         top: 33rem;
         left: 50%;
-        font-size: 20px;
+        font-size: 10px;
         transform: translate(-50%, -50%);
     }
     .BtnRemove {
@@ -185,7 +185,7 @@ footer {
         height: 7%;
         top: 37rem;
         left: 50%;
-        font-size: 20px;
+        font-size: 10px;
         transform: translate(-50%, -50%);
     }
     .BtnGoBack{

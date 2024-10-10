@@ -75,7 +75,7 @@ main{
 }
 
 .BtnAdd{
-    top: 36rem;
+    top: 34.5rem;
     background-color: #F8E48C;
     width: 60%;
     height: 10%;
@@ -85,14 +85,14 @@ main{
     transform: translate(-50%, -50%);
     border-color:#F8E48C ;
     font-family: "Roboto";
-    font-size: 20px;
+    font-size: 27gipx;
     color: #8EAAF5;
     font-weight: bold;
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
 .BtnRemove{
-    top: 42.5rem;
+    top: 41.5rem;
     background-color: #F8E48C;
     width: 60%;
     height: 10%;
@@ -102,7 +102,7 @@ main{
     transform: translate(-50%, -50%);
     border-color:#F8E48C ;
     font-family: "Roboto";
-    font-size: 20px;
+    font-size: 27px;
     color: #8EAAF5;
     font-weight: bold;
     transition: filter 0.3s ease, transform 0.2s ease;

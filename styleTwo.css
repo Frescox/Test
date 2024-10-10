@@ -91,4 +91,8 @@ footer {
         height: 10%;
         width: 22%;
     }
+
+    .notePadContainer {
+        top: 55%;
+    }
 }

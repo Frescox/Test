@@ -173,19 +173,19 @@ footer {
 
 @media only screen and (max-width: 350px) {
     .BtnAdd {
-        width: 66%;  
+        width: 80%;  
         height: 7%;
         top: 33rem;
         left: 50%;
-        font-size: 25px;
+        font-size: 20px;
         transform: translate(-50%, -50%);
     }
     .BtnRemove {
-        width: 66%;  
+        width: 80%;  
         height: 7%;
         top: 37rem;
         left: 50%;
-        font-size: 25px;
+        font-size: 20px;
         transform: translate(-50%, -50%);
     }
     .BtnGoBack{

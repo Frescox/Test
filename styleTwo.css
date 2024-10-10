@@ -76,61 +76,9 @@ footer {
     z-index: 10;
 }
 
-@media only screen and (max-width: 600px) {
-    .BtnGoBack {
-        top: 95.6;
-        left: 16%;
-        height: 10%;
-        width: 22%;
-    }
-
-    #textInput {
-        top: 55%;
-        
-    }
-}
-
-/* Estilo general del teclado */
 .keyboard {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 5px;
     margin-top: 20px;
-}
-
-/* Estilo para botones del teclado */
-.keyboard button {
-    background-color: #8EAAF5; /* Color azul claro para las teclas */
-    color: white; /* Color del texto en blanco */
-    font-size: 18px; /* Tamaño de la fuente */
-    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 15px; /* Espaciado interno */
-    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
-    transition: background-color 0.3s ease; /* Suavizado del cambio de color */
-}
-
-/* Estilo para los botones especiales (Shift, Enter, Backspace) */
-.keyboard button.special {
-    background-color: #F8E48C; /* Color amarillo para botones especiales */
-    color: black; /* Texto en negro */
-}
-
-/* Hover: Cambia el color al pasar el ratón sobre el botón */
-.keyboard button:hover {
-    background-color: #729BDA; /* Color más oscuro al hacer hover */
-}
-
-/* Estilo específico para dispositivos móviles */
-@media only screen and (max-width: 600px) {
-    .keyboard {
-        grid-template-columns: repeat(20, 1fr); /* 20 columnas para teléfonos */
-    }
-
-    .keyboard button {
-        padding: 10px; /* Tamaño reducido en móviles */
-        font-size: 16px; /* Ajustar el tamaño de la fuente */
-        border-radius: 8px; /* Bordes redondeados */
-    }
 }

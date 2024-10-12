@@ -15,6 +15,7 @@ header {
     padding: 2vh; 
     display: flex;
     justify-content: center;
+    
 }
 
 .container_Notes_Created {
@@ -38,6 +39,7 @@ header {
     background-color: white;
     top: 10%;
     position: fixed;
+    z-index: 10;
 }
 
 .text {
@@ -52,6 +54,35 @@ header {
 main {
     justify-content: center;
     display: grid;
+}
+
+.Btnleft{
+    background-image: url("izquierdaa.png");
+    top: 42%;
+    position: fixed;
+    left: 11%;
+    transform: translate(-20%, -50%);
+}
+
+.Btnright, .Btnleft{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 19%;
+    height: 7.5%;
+    position: fixed;
+    border: none;
+    cursor: pointer; 
+    background-color: transparent;
+    transition: filter 0.3s ease, transform 0.2s ease;
+
+}
+
+.Btnright{
+    background-image: url("botonDerechaa.png");
+    top: 42%;
+    left: 11%;
+    transform: translate(330%, -50%);
 }
 
 .notePad {
@@ -86,35 +117,15 @@ main {
 }
 
 .BtnAdd {
-    top: 68%;
+    top: 70%;
 }
 
 .BtnRemove {
-    top: 80%;
+    top: 82%;
 }
 
-.notePadContainer {
-    display: none;
-    background-image: url("background_notePad.png");
-    background-size: contain;
-    background-repeat: repeat;
-    width: 90%;
-    max-height: 80vh; 
-    margin: 50px auto;
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 15px;
-    z-index: 10;
-}
-
-.notePadContainer.show {
-    display: block;
-}
-
-.BtnGoBack {
-    background-image: url("Botones-03.png");
+.BtnGoBack1 {
+    background-image: url("botones-03.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -130,20 +141,25 @@ main {
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-.BtnRemove:hover, .BtnAdd:hover, .BtnGoBack:hover {
+.BtnRemove:hover, .BtnAdd:hover, .BtnGoBack1:hover, .Btnleft:hover, .Btnright:hover{
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
 }
 
-.BtnRemove:active, .BtnAdd:active, .BtnGoBack:active {
+.BtnRemove:active, .BtnAdd:active, .BtnGoBack1:active, .Btnleft:active, .Btnright:active {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transform: translate(-50%, -50%) scale(0.95);
+}
+
+.Btnright:active {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transform: translate(350%, -50%) scale(0.95);
 }
 
 footer {
     background-color: #F8E48C;
     color: #FFF2F2;
     text-align: center;
-    padding: 5vh 0;/* Proporcional a la altura de la pantalla */
+    padding: 5vh;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -153,3 +169,60 @@ footer {
     opacity: 0;
     transform: translateY(10px);
 }
+
+.preview {
+    position: fixed;
+    width: 45vw;
+    height:50vh;
+    border: 1px solid #ccc;
+    z-index: -1;
+    transform: translate(-50%, 25%);
+    border-color: #8EAAF5;
+    pointer-events: none;
+}
+
+.upDateNote{
+
+}
+@media only screen and (min-width: 1024px) {
+
+
+    .notePad {
+        width: 20vw; 
+        height: 90vh;
+        max-height: 320px;
+        min-width: 170px;
+        top: 31%;
+    }
+
+    .BtnAdd, .BtnRemove {
+        font-size: 20px;
+        width: 40%;
+        height: 10%;
+        font-size: 4.5vw;
+    }
+
+        
+    .container_Notes_Created {
+        font-family: "Roboto";
+        font-size: 3vw;
+        color: #FBE48C;
+        font-weight: bold;
+        height: 10vh; 
+        position: fixed;
+    }
+
+    .text {
+        text-align: center;
+        font-family: "Roboto";
+        font-size: 4vw;
+        color: #5f8aea;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .preview{
+        width: 20vw;
+    }
+
+    }

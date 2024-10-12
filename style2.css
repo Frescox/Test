@@ -21,8 +21,8 @@ body {
     overflow: hidden;
 }
 
-.BtnGoBack {
-    background-image: url("Botones-03.png");
+.BtnGoBack2 {
+    background-image: url("botones-03.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -37,11 +37,11 @@ body {
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-.BtnGoBack:hover {
+.BtnGoBack2:hover {
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
 }
 
-.BtnGoBack:active {
+.BtnGoBack2:active {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transform: translate(-50%, -50%) scale(0.95);
 }
@@ -57,6 +57,7 @@ body {
     background-position: center;
     padding-left: 20px;
     padding-top: 25px;
+    margin-right: 20px;
     line-height: 2.03em;
     overflow-y: auto;
 }
@@ -77,4 +78,13 @@ footer {
     grid-template-columns: repeat(10, 1fr);
     gap: 5px;
     margin-top: 20px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .notePadContainer{
+        width: 90%;
+        height: 80%;
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
 }

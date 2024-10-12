@@ -1,7 +1,7 @@
 document.getElementById("BtnGoBack2").onclick = function() {
     saveText();
     setTimeout(function() {
-        window.location.href = "inicio_notas.html"; 
+        window.location.href = "index.html"; 
     }, 500);
 };
 
@@ -42,11 +42,21 @@ function loadText() {
     if (savedNote) {
         $textInput.val(savedNote); // Carga el contenido guardado en el textarea
         console.log("Texto cargado desde localStorage.");
-    } else {
-        $textInput.val('Esta tiene valor'); // Carga el valor predeterminado si no hay nada guardado
-        console.log("No se encontró texto en localStorage. Usando valor predeterminado.");
     }
 }
+
+function removeText() {
+    localStorage.removeItem('noteContent'); // Elimina el contenido del localStorage
+    textInput.value = ""; // Limpia el textarea
+    saveText();
+    console.log("Texto eliminado.");
+}
+
+function newNote() {
+    textInput.value = ""; // Limpia el campo de texto para una nueva nota
+    console.log("Nueva nota creada.");
+}
+
 
 // Llama a loadText() cuando se carga la página para verificar si hay un valor guardado
 $(document).ready(loadText);

@@ -1,6 +1,5 @@
 
 document.getElementById("newNoteBtn").onclick = function() {
-    loadText()
     setTimeout(function() {
         window.location.href = "notePad.html"; 
     }, 500);

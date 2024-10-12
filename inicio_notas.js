@@ -14,7 +14,7 @@ const iframe = document.getElementById('notePreview');
 
 iframe.onload = function() {
     const iframeDocument = iframe.contentWindow.document;
-    const elementsToHide = iframeDocument.querySelectorAll('header, footer, .BtnGoBack');
+    const elementsToHide = iframeDocument.querySelectorAll('header, footer, .BtnGoBack2');
     elementsToHide.forEach(el => el.style.display = 'none');
 };
 

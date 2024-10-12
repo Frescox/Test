@@ -24,4 +24,5 @@ function loadText() {
         textInput.value = savedNote; // Carga el contenido guardado en el textarea
         console.log("Texto cargado desde localStorage.");
     }
+    //nalkljnfakljdfalsjnfalksd
 }

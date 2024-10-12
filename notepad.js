@@ -42,11 +42,20 @@ function loadText() {
     if (savedNote) {
         $textInput.val(savedNote); // Carga el contenido guardado en el textarea
         console.log("Texto cargado desde localStorage.");
-    } else {
-        $textInput.val('Esta tiene valor'); // Carga el valor predeterminado si no hay nada guardado
-        console.log("No se encontró texto en localStorage. Usando valor predeterminado.");
     }
 }
+
+function removeText() {
+    localStorage.removeItem('noteContent'); // Elimina el contenido del localStorage
+    $textInput.val(''); // Limpia el textarea
+    console.log("Texto eliminado.");
+}
+
+function newNote() {
+    $textInput.val(''); // Limpia el textarea
+    console.log("Nueva nota creada.");
+}
+
 
 // Llama a loadText() cuando se carga la página para verificar si hay un valor guardado
 $(document).ready(loadText);

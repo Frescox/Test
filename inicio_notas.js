@@ -21,8 +21,7 @@ iframe.onload = function() {
 function loadText() {
     const savedNote = localStorage.getItem('noteContent');
     if (savedNote) {
-        textInput.value = savedNote; // Carga el contenido guardado en el textarea
+        textInput.value = savedNote; 
         console.log("Texto cargado desde localStorage.");
     }
-    //nalkljnfakljdfalsjnfalksd
 }

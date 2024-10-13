@@ -20,26 +20,26 @@ $(document).ready(function() {
     // Crear una instancia de NoteManager
     const noteManager = new NoteManager(); // Asegúrate de tener definida esta instancia
 
-    // Configurar los eventos de botones
-
-    // Botón para acceder a la siguiente nota
-    /*document.getElementById('nextNote').onclick = function() {
-        noteManager.goToNextNote(); // Cambiar a la siguiente nota
-    };
-
-    // Botón para acceder a la nota anterior
-    document.getElementById('previosuNote').onclick = function() {
-        noteManager.goToPreviousNote(); // Cambiar a la nota anterior
-    };*/
-
     document.getElementById('upDateNote').onclick = function() {
-        setTimeout(function() {
-            window.location.href = "notePad.html"; // Redirige a la página notePad.html
-        }, 500);
-        loadNoteContent(3);
-        console.log('Contenido de la nota actualizado.');
+        // Verifica si la lista de notas está vacía
+        if (noteManager.notes.length === 0) {
+            // Crea una nueva nota si no hay ninguna
+            console.log("No hay notas, creando una nueva nota.");
+            noteManager.createNewNote();
+            // Redirige a notePad.html si hay notas
+            console.log('Contenido de la nota actualizado.');
+            setTimeout(function() {
+                window.location.href = "notePad.html"; // Redirige a la página notePad.html
+            }, 500);
+        } else {
+            // Redirige a notePad.html si hay notas
+            console.log('Contenido de la nota actualizado.');
+            setTimeout(function() {
+                window.location.href = "notePad.html"; // Redirige a la página notePad.html
+            }, 500);
+        }
     };
-
+    
     // Botón para eliminar notas (aquí eliminamos solo la nota actual)
     document.getElementById('removeBtn').onclick = function() {
         console.log('Borrando nota actual.');
@@ -47,12 +47,6 @@ $(document).ready(function() {
         $('#textInput').val(''); // Limpiar el área de texto
         window.location.reload();
     };
-
-    /*document.getElementById('newNote').onclick = function() {
-        console.log('Creando nota.');
-        noteManager.createNewNote();
-    };*/
-
     // Botón para mostrar el contenido de localStorage (función showLocalStorage)
     document.getElementById('BtnGoBack1').onclick = function() {
         console.log('Mostrando contenido de localStorage.');

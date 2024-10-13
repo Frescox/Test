@@ -34,7 +34,7 @@ class NoteManager {
 
     // Función para crear una nueva nota
     createNewNote() {
-        const newNoteId = this.calculateNextId();
+        const newNoteId = 1
         const newNote = { id: newNoteId, content: "" };
         this.notes.push(newNote);
         this.goToNextNote();
@@ -71,16 +71,6 @@ class NoteManager {
         }
     }
 
-    goToPreviousNote() {
-        const currentIndex = this.notes.findIndex(n => n.id === this.currentNoteId);
-        if (currentIndex > 0) {
-            this.currentNoteId = this.notes[currentIndex - 1].id;
-            this.loadNoteContent(this.currentNoteId);
-            console.log('Nota número ' + this.currentNoteId + ' encontrada.');
-        } else {
-            console.log("No hay notas anteriores disponibles.");
-        }
-    }
 
     // Función para eliminar una nota completa del localStorage
     removeNote(noteId) {
@@ -108,24 +98,16 @@ class NoteManager {
         this.notes = JSON.parse(localStorage.getItem('notes')) || [];
     }
 
-    showLocalStorage() {
-        console.log('Contenido del localStorage.');
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            const value = localStorage.getItem(key);
-            console.log(`${key}: ${value}`); // Usar backticks correctamente para interpolación
-        }
-    }
     
 }
 
-$(document).ready(function() {
-    document.getElementById("BtnGoBack2").onclick = function() {
-        setTimeout(function() {
-            window.location.href = "index.html";
-        }, 500);
-    };
-});
+    $(document).ready(function() {
+        document.getElementById("BtnGoBack2").onclick = function() {
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 500);
+        };
+    });
 
 document.addEventListener('DOMContentLoaded', function() {
     const textInput = document.getElementById('textInput');

@@ -90,7 +90,7 @@ main {
     background-size: cover;
     width: 40vw; 
     height: 30vh;
-    max-height: 280px;
+    max-height: 270px;
     min-width: 170px;
     margin-top: 10vh;
     position: fixed;
@@ -190,9 +190,8 @@ footer {
 
 .preview {
     position: fixed;
-    top: 6.5%;
-    width: 50vw;
-    height:46vh;
+    width: 45vw;
+    height:50vh;
     border: 1px solid #ccc;
     z-index: -1;
     transform: translate(-50%, 25%);

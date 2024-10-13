@@ -1,61 +1,154 @@
-document.getElementById("BtnGoBack2").onclick = function() {
-    saveText();
-    setTimeout(function() {
-        window.location.href = "index.html"; 
-    }, 500);
-};
 
-$(document).ready(function() {
-    // Configuración del teclado virtual
-    $("#keyboard").keyboard({
-        layout: 'qwerty',
-        customLayout: {
-            'normal': [
-                'Q W E R T Y U I O P',
-                'A S D F G H J K L Ñ',
-                'Z X C V B N M ?123',
-                'SPACE SPACE SPACE'
-            ]
-        },
-        usePreview: false
-    });
+const $textInput = document.getElementById('textInput');
 
-    // Carga el contenido guardado al cargar la página
-    loadText();
-
-    // Crea una nueva nota
-    $('#BtnNewNote').on('click', function() {
-        newNote();
-    });
-});
-
-const $textInput = $('#textInput'); // Selecciona el textarea usando jQuery
-
-function saveText() {
-    const noteContent = $textInput.val(); // Obtiene el valor del textarea
-    localStorage.setItem('noteContent', noteContent); // Guarda el contenido en localStorage
-    console.log("Texto guardado en localStorage.");
-}
-
-function loadText() {
-    const savedNote = localStorage.getItem('noteContent');
-    if (savedNote) {
-        $textInput.val(savedNote); // Carga el contenido guardado en el textarea
-        console.log("Texto cargado desde localStorage.");
+class Note {
+    constructor(id, content) {
+        this.id = id;
+        this.content = content;
     }
 }
 
-function removeText() {
-    localStorage.removeItem('noteContent'); // Elimina el contenido del localStorage
-    $textInput.val(''); // Limpia el textarea
-    console.log("Texto eliminado.");
+class NoteManager {
+    constructor() {
+        this.notes = JSON.parse(localStorage.getItem('notes')) || [];
+        this.currentNoteId = this.notes.length > 0 ? this.notes[0].id : 1;
+    }
+
+    // Calcular el siguiente ID
+    calculateNextId() {
+        if (this.notes.length === 0) return 1;
+        return Math.max(...this.notes.map(note => note.id)) + 1;
+    }
+
+    // Función para cargar el contenido de una nota por su ID
+    loadNoteContent(noteId) {
+        const note = this.notes.find(n => n.id === noteId);
+        if (note) {
+            $('#textInput').val(note.content);
+            this.saveNotes();
+            console.log('Nota ' + note.id + ' cargada.');
+        } else {
+            console.log(`No se encontró la nota con ID ${noteId}.`);
+        }
+    }
+
+    // Función para crear una nueva nota
+    createNewNote() {
+        const newNoteId = this.calculateNextId();
+        const newNote = { id: newNoteId, content: "" };
+        this.notes.push(newNote);
+        this.goToNextNote();
+        this.saveNotes();
+        this.loadNoteContent(newNote.id);
+    }
+
+    // Guardar las notas en localStorage
+    saveNotes() {
+        localStorage.setItem('notes', JSON.stringify(this.notes));
+    }
+
+    // Método para actualizar el contenido de la nota actual
+    updateCurrentNoteContent(noteId, newContent) {
+        const noteIndex = this.notes.findIndex(n => n.id === noteId); // Buscar el índice de la nota con el ID proporcionado
+        if (noteIndex !== -1) {
+            this.notes[noteIndex].content = newContent; // Actualizar el contenido de la nota
+            this.saveNotes(); // Guardar las notas en localStorage
+            console.log(`Nota con ID ${noteId} actualizada.`); // Confirmación en consola
+        } else {
+            console.error(`No se encontró la nota con ID ${noteId} para actualizar.`); // Manejo de errores
+        }
+    }
+
+
+    goToNextNote() {
+        const currentIndex = this.notes.findIndex(n => n.id === this.currentNoteId);
+        if (currentIndex !== -1 && currentIndex < this.notes.length - 1) {
+            this.currentNoteId = this.notes[currentIndex + 1].id;
+            console.log('Nota número ' + this.currentNoteId + ' encontrada.');
+            this.loadNoteContent(this.currentNoteId);
+        } else {
+            console.log("No hay más notas disponibles.");
+        }
+    }
+
+    goToPreviousNote() {
+        const currentIndex = this.notes.findIndex(n => n.id === this.currentNoteId);
+        if (currentIndex > 0) {
+            this.currentNoteId = this.notes[currentIndex - 1].id;
+            this.loadNoteContent(this.currentNoteId);
+            console.log('Nota número ' + this.currentNoteId + ' encontrada.');
+        } else {
+            console.log("No hay notas anteriores disponibles.");
+        }
+    }
+
+    // Función para eliminar una nota completa del localStorage
+    removeNote(noteId) {
+        const noteIndex = this.notes.findIndex(n => n.id === noteId);
+        if (noteIndex !== -1) {
+            // Eliminar la nota del array de notas
+            this.notes.splice(noteIndex, 1);
+            this.reassignIds(); // Reasignar los IDs después de eliminar la nota
+            this.saveNotes(); // Guardar el array actualizado en localStorage
+            console.log(`Nota con ID ${noteId} eliminada del localStorage.`);
+        } else {
+            console.log(`No se encontró la nota con ID ${noteId}.`);
+        }
+    }
+
+    // Función para reasignar los IDs de las notas en orden ascendente
+    reassignIds() {
+        this.notes.forEach((note, index) => {
+            note.id = index + 1; // Asignar un nuevo ID basado en el índice
+        });
+    }
+
+    // Cargar las notas desde localStorage
+    loadNotes() {
+        this.notes = JSON.parse(localStorage.getItem('notes')) || [];
+    }
+
+    showLocalStorage() {
+        console.log('Contenido del localStorage.');
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            console.log(`${key}: ${value}`); // Usar backticks correctamente para interpolación
+        }
+    }
+    
 }
 
-function newNote() {
-    $textInput.val(''); // Limpia el textarea
-    console.log("Nueva nota creada.");
-}
+$(document).ready(function() {
+    document.getElementById("BtnGoBack2").onclick = function() {
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 500);
+    };
+});
 
+document.addEventListener('DOMContentLoaded', function() {
+    const textInput = document.getElementById('textInput');
 
-// Llama a loadText() cuando se carga la página para verificar si hay un valor guardado
-$(document).ready(loadText);
+    // Crear una instancia de NoteManager
+    const noteManager = new NoteManager();
+
+    // Cargar el contenido de la nota actual al cargar la página
+    console.log('Entrando a la nota:' + noteManager.currentNoteId);
+    noteManager.loadNoteContent(noteManager.currentNoteId);
+
+    // Guardar automáticamente cuando el contenido del textarea cambia
+    textInput.addEventListener('input', function() {
+        const noteContent = textInput.value; // Obtener el contenido actual del textarea
+        noteManager.updateCurrentNoteContent(noteManager.currentNoteId, noteContent); // Actualizar el contenido de la nota actual
+    });
+
+    // Configurar el botón de "Guardar y Volver" para regresar al index.html
+    document.getElementById('BtnGoBack2').onclick = function() {
+        setTimeout(function() {
+            window.location.href = "index.html"; 
+        }, 500);
+    };
+});
+
+export { NoteManager, Note }; // Exportar las clases

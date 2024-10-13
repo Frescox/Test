@@ -134,18 +134,36 @@ main {
     top: 95.5%;
     position: fixed;
     z-index: 1;
-    left: 11%;
+    left: 20%;
     transform: translate(-50%, -50%);
     border: none;
     background-color: transparent;
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-.BtnRemove:hover, .BtnAdd:hover, .BtnGoBack1:hover, .Btnleft:hover, .Btnright:hover{
+.newNote{
+    background-color: #8EAAF5;
+    width: 40%;
+    height: 7%;
+    position: fixed;
+    border-radius: 15px;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    border-color: #8EAAF5;
+    font-family: "Roboto";
+    font-size: 6vw;
+    color: #F8E48C;
+    font-weight: bold;
+    transition: filter 0.3s ease, transform 0.2s ease;
+    top: 95%;
+    z-index: 20;
+}
+
+.BtnRemove:hover, .BtnAdd:hover, .BtnGoBack1:hover, .Btnleft:hover, .Btnright:hover, .newNote:hover{
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
 }
 
-.BtnRemove:active, .BtnAdd:active, .BtnGoBack1:active, .Btnleft:active, .Btnright:active {
+.BtnRemove:active, .BtnAdd:active, .BtnGoBack1:active, .Btnleft:active, .Btnright:active, .newNote:active{
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transform: translate(-50%, -50%) scale(0.95);
 }
@@ -181,10 +199,7 @@ footer {
     pointer-events: none;
 }
 
-.upDateNote{
-
-}
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 840px) {
 
 
     .notePad {
@@ -222,6 +237,11 @@ footer {
     }
 
     .preview{
+        width: 20vw;
+    }
+
+    .newNote{
+        font-size: 2.5vw;
         width: 20vw;
     }
 

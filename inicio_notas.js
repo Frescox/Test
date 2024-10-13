@@ -20,6 +20,7 @@ $(document).ready(function() {
     // Crear una instancia de NoteManager
     const noteManager = new NoteManager(); // Asegúrate de tener definida esta instancia
 
+<<<<<<< HEAD
     // Configurar los eventos de botones
 
     // Botón para acceder a la siguiente nota
@@ -62,3 +63,18 @@ $(document).ready(function() {
     // Cargar el contenido de la nota actual al cargar la página
     noteManager.loadNoteContent(noteManager.currentNoteId); // Cargar el contenido de la nota actual
 });
+=======
+iframe.onload = function() {
+    const iframeDocument = iframe.contentWindow.document;
+    const elementsToHide = iframeDocument.querySelectorAll('header, footer, .BtnGoBack2');
+    elementsToHide.forEach(el => el.style.display = 'none');
+};
+
+function loadText() {
+    const savedNote = localStorage.getItem('noteContent');
+    if (savedNote) {
+        textInput.value = savedNote; 
+        console.log("Texto cargado desde localStorage.");
+    }
+}
+>>>>>>> a3f48d5b6e86c9af7e37c808b27a0979557d229a

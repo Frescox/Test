@@ -32,7 +32,6 @@ $(document).ready(function() {
                 window.location.href = "notePad.html"; // Redirige a la página notePad.html
             }, 500);
         } else {
-            // Redirige a notePad.html si hay notas
             console.log('Contenido de la nota actualizado.');
             setTimeout(function() {
                 window.location.href = "notePad.html"; // Redirige a la página notePad.html
@@ -40,19 +39,19 @@ $(document).ready(function() {
         }
     };
     
-    // Botón para eliminar notas (aquí eliminamos solo la nota actual)
+    // Botón para eliminar notas
     document.getElementById('removeBtn').onclick = function() {
         console.log('Borrando nota actual.');
         noteManager.removeNote(noteManager.currentNoteId); // Eliminar solo la nota actual
         $('#textInput').val(''); // Limpiar el área de texto
         window.location.reload();
     };
-    // Botón para mostrar el contenido de localStorage (función showLocalStorage)
+
     document.getElementById('BtnGoBack1').onclick = function() {
         console.log('Mostrando contenido de localStorage.');
         noteManager.showLocalStorage(); // Mostrar el contenido del almacenamiento
     };
 
     // Cargar el contenido de la nota actual al cargar la página
-    noteManager.loadNoteContent(noteManager.currentNoteId); // Cargar el contenido de la nota actual
+    noteManager.loadNoteContent(noteManager.currentNoteId); 
 });

@@ -14,7 +14,6 @@ class NoteManager {
         this.currentNoteId = this.notes.length > 0 ? this.notes[0].id : 1;
     }
 
-    // Calcular el siguiente ID
     calculateNextId() {
         if (this.notes.length === 0) return 1;
         return Math.max(...this.notes.map(note => note.id)) + 1;
@@ -52,8 +51,8 @@ class NoteManager {
         const noteIndex = this.notes.findIndex(n => n.id === noteId); // Buscar el índice de la nota con el ID proporcionado
         if (noteIndex !== -1) {
             this.notes[noteIndex].content = newContent; // Actualizar el contenido de la nota
-            this.saveNotes(); // Guardar las notas en localStorage
-            console.log(`Nota con ID ${noteId} actualizada.`); // Confirmación en consola
+            this.saveNotes();
+            console.log(`Nota con ID ${noteId} actualizada.`); 
         } else {
             console.error(`No se encontró la nota con ID ${noteId} para actualizar.`); // Manejo de errores
         }

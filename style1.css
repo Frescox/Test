@@ -191,7 +191,7 @@ footer {
 .preview {
     position: fixed;
     width: 50vw;
-    height:46vh;
+    height:44vh;
     border: 1px solid #ccc;
     z-index: -1;
     transform: translate(-50%, 25%);
@@ -239,6 +239,7 @@ footer {
 
     .preview{
         width: 20vw;
+        
     }
 
     .newNote{

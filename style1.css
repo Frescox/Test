@@ -192,7 +192,7 @@ footer {
     margin-top: 2%;
     position: fixed;
     width: 45vw;
-    height:47vh;
+    height:45vh;
     border: 1px solid #ccc;
     z-index: -1;
     transform: translate(-50%, 25%);

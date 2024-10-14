@@ -256,3 +256,31 @@ footer {
     }
 
     }
+
+    @media only screen and (orientation: landscape) {
+        main {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      
+        /* Alinea el iframe a la izquierda */
+        #notePreview {
+          width: 50%;  /* Ajusta el ancho para la vista horizontal */
+          height: 50vh;
+          margin-left: 5%;  /* Añade espacio a la izquierda */
+        }
+      
+        /* Alinea los botones a la derecha */
+        .BtnAdd, .BtnRemove {
+          width: 20%;  /* Ajusta el tamaño de los botones */
+          margin-right: 5%;  /* Añade espacio a la derecha */
+          height: auto;
+          top: unset;  /* Elimina las posiciones top */
+        }
+      
+        .BtnAdd {
+          margin-bottom: 20px;
+        }
+      }
+      

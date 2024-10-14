@@ -126,7 +126,7 @@ main {
     width: 19%;
     height: 7.5%;
     top: 95.5%;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     left: 20%;
     transform: translate(-50%, -50%);
@@ -178,8 +178,9 @@ footer {
     text-align: center;
     padding: 5vh;
     bottom: 0;
-    width: 100%;
-    transform: translate(0%, 500%)
+    width: 88.4%;
+    transform: translate(0%, -1%);
+    position: absolute;
 }
 
 .fade-out {
@@ -188,7 +189,7 @@ footer {
 }
 
 .preview {
-    position: fixed;
+    position: absolute;
     width: 50vw;
     height:44vh;
     border: 1px solid #ccc;
@@ -226,6 +227,7 @@ footer {
         color: #FBE48C;
         font-weight: bold;
         height: 10vh; 
+        position: absolute;
     }
 
     .text {

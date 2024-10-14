@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonrisas del Autismo</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <script type="module" src="inicio_notas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Notes</title>
 </head>
 <body>
-
     <header>
-        <img src="logo.png" alt="Logo de Sonrisas del Autismo" class="logo">
-        <h1>Sonrisas del Autismo</h1>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Acceder</a>
-            <a href="#">Objetivo de la Empresa</a>
-            <a href="#">Acerca de Nosotros</a>
-        </nav>
+        <label class="container_Notes_Created">
+            <p class="notes_Created">Notas creadas</p>
+        </label>
+        <label class="container_Text">
+            <p class="text">Hola mi nombre es...</p>
+        </label>
     </header>
 
-    <section>
-        <p>
-            Trabajamos de manera integral con las familias de hijos con TEA para que estas personas logren tener 
-            una vida por sí solos. Informamos a las familias y a la comunidad lo que es el autismo, así como sus 
-            características, y sensibilizamos sobre el tema.
-        </p>
-    </section>
+    <main>
+        <div class="prewievNotes">
+            <iframe id="notePreview" class="preview" src="notePad.html"></iframe>
+        </div>
+        <button id= "upDateNote" class="BtnAdd">Editar nota</button>
+        <button id = "removeBtn" class="BtnRemove" >Borrar nota</button>
+        <button id = "BtnGoBack1" class="BtnGoBack1"></button>
+    </main>
 
-    <footer>
-        <p>&copy; 2024 <strong>Sonrisas del Autismo</strong>. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <footer></footer>
+    
 </body>
 </html>

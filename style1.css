@@ -257,7 +257,7 @@ footer {
 
     }
 
-    @media only screen and (orientation: landscape) {
+@media only screen and (max-width: 767px) and (orientation: landscape) {
         main {
           display: flex;
           justify-content: space-between;
@@ -265,22 +265,46 @@ footer {
         }
       
         /* Alinea el iframe a la izquierda */
-        #notePreview {
+        .preview {
           width: 50%;  /* Ajusta el ancho para la vista horizontal */
           height: 50vh;
-          margin-left: 5%;  /* Añade espacio a la izquierda */
+          margin-left: 30%;  /* Añade espacio a la izquierda */
+          top: 13.3%;
         }
       
         /* Alinea los botones a la derecha */
         .BtnAdd, .BtnRemove {
-          width: 20%;  /* Ajusta el tamaño de los botones */
-          margin-right: 5%;  /* Añade espacio a la derecha */
-          height: auto;
-          top: unset;  /* Elimina las posiciones top */
+            width: 35%;  /* Ajusta el tamaño de los botones */
+            left: 75%;  /* Añade espacio a la derecha */
+            height: auto;
+            top: unset;  /* Elimina las posiciones top */
+            font-size: 6vw;
         }
       
         .BtnAdd {
-          margin-bottom: 20px;
+            top: 45%;
         }
+
+        .BtnRemove {
+            top: 65%;
+          }
+
+        .BtnGoBack1{
+            top: 93.7%;
+            left: 15%;
+        }
+
+        footer{
+            padding-top: 4%;
+        }
+
+        .container_Text {
+            height: 13.3%;
       }
+
+      .text{
+        font-size: 5vw;
+        margin-top: 1%;
+      }
+}
       

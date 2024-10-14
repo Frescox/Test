@@ -158,7 +158,7 @@ main {
 
 .BtnRemove:active, .BtnAdd:active, .BtnGoBack1:active, .Btnleft:active, .Btnright:active, .newNote:active{
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    transform: translate(50%, 500%) scale(0.95);
+    transform: translate(0%, 500%) scale(0.95);
 }
 
 .BtnGoBack1:active{
@@ -196,7 +196,7 @@ footer {
     transform: translate(-50%, 25%);
     border-color: #8EAAF5;
     pointer-events: none;
-    top: 6%;
+    top: 9%;
 }
 
 @media only screen and (min-width: 840px) {
@@ -212,8 +212,10 @@ footer {
 
     .BtnAdd, .BtnRemove {
         font-size: 20px;
-        width: 40%;
-        height: 10%;
+        width: 100rem;
+        height: 5rem;
+        max-width: 500px;
+        max-height: 500px;
         font-size: 4.5vw;
     }
 
@@ -224,7 +226,6 @@ footer {
         color: #FBE48C;
         font-weight: bold;
         height: 10vh; 
-        position: fixed;
     }
 
     .text {
@@ -244,6 +245,11 @@ footer {
     .newNote{
         font-size: 2.5vw;
         width: 20vw;
+    }
+
+    .BtnRemove:active, .BtnAdd:active{
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        transform: translate(0%, 500%) scale(0.95);
     }
 
     }

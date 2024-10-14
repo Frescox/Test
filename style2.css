@@ -12,8 +12,8 @@ body {
     background-repeat: no-repeat;
     width: 90%;
     height: 80%;
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
@@ -27,10 +27,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     width: 19%;
-    height: 7.5%;
-    position: fixed;
+    height: 70%;
     z-index: 1;
     left: 11%;
+    position: absolute;
     transform: translate(-50%, -50%);
     border: none;
     background-color: transparent;
@@ -67,10 +67,11 @@ footer {
     color: #FFF2F2;
     text-align: center;
     padding: 38px 0;
-    position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 10;
+    top: 46.88rem;
+    position: relative;
 }
 
 .keyboard {

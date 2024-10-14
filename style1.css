@@ -19,10 +19,12 @@ header {
 }
 
 .container_Notes_Created {
+    font-family: "Roboto";
     font-size: 6vw;
     color: #FBE48C;
     font-weight: bold;
     height: 10vh; 
+    position: fixed;
 }
 
 .notes_Created {
@@ -36,11 +38,13 @@ header {
     position: absolute;
     background-color: white;
     top: 10%;
+    position: fixed;
     z-index: 10;
 }
 
 .text {
     text-align: center;
+    font-family: "Roboto";
     font-size: 7vw;
     color: #5f8aea;
     font-weight: bold;
@@ -55,6 +59,7 @@ main {
 .Btnleft{
     background-image: url("izquierdaa.png");
     top: 42%;
+    position: fixed;
     left: 11%;
     transform: translate(-20%, -50%);
 }
@@ -65,6 +70,7 @@ main {
     background-repeat: no-repeat;
     width: 19%;
     height: 7.5%;
+    position: fixed;
     border: none;
     cursor: pointer; 
     background-color: transparent;
@@ -87,6 +93,7 @@ main {
     max-height: 270px;
     min-width: 170px;
     margin-top: 10vh;
+    position: fixed;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -95,27 +102,26 @@ main {
 
 .BtnAdd, .BtnRemove {
     background-color: #F8E48C;
-    width: 100rem;
-    height: 5rem;
-    max-width: 500px;
-    max-height: 500px;
+    width: 60%;
+    height: 10%;
+    position: fixed;
     border-radius: 15px;
     left: 50%;
-    transform: translate(0%, 500%);
+    transform: translate(-50%, -50%);
     border-color: #F8E48C;
+    font-family: "Roboto";
     font-size: 6vw;
     color: #8EAAF5;
     font-weight: bold;
-    margin-top: 20px;
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
 .BtnAdd {
-    top: 10%;
+    top: 70%;
 }
 
 .BtnRemove {
-    top: 90%;
+    top: 82%;
 }
 
 .BtnGoBack1 {
@@ -126,7 +132,7 @@ main {
     width: 19%;
     height: 7.5%;
     top: 95.5%;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     left: 20%;
     transform: translate(-50%, -50%);
@@ -144,6 +150,7 @@ main {
     left: 70%;
     transform: translate(-50%, -50%);
     border-color: #8EAAF5;
+    font-family: "Roboto";
     font-size: 6vw;
     color: #F8E48C;
     font-weight: bold;
@@ -158,14 +165,8 @@ main {
 
 .BtnRemove:active, .BtnAdd:active, .BtnGoBack1:active, .Btnleft:active, .Btnright:active, .newNote:active{
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    transform: translate(0%, 500%) scale(0.95);
+    transform: translate(-50%, -50%) scale(0.95);
 }
-
-.BtnGoBack1:active{
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    transform: translate(-80%, -50%) scale(0.95);
-}
-
 
 .Btnright:active {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
@@ -177,10 +178,9 @@ footer {
     color: #FFF2F2;
     text-align: center;
     padding: 5vh;
+    position: fixed;
     bottom: 0;
-    width: 88.4%;
-    transform: translate(0%, -1%);
-    position: absolute;
+    width: 100%;
 }
 
 .fade-out {
@@ -189,15 +189,14 @@ footer {
 }
 
 .preview {
-    position: absolute;
-    width: 50vw;
-    height:44vh;
+    position: fixed;
+    width: 45vw;
+    height:50vh;
     border: 1px solid #ccc;
     z-index: -1;
     transform: translate(-50%, 25%);
     border-color: #8EAAF5;
     pointer-events: none;
-    top: 9%;
 }
 
 @media only screen and (min-width: 840px) {
@@ -213,12 +212,9 @@ footer {
 
     .BtnAdd, .BtnRemove {
         font-size: 20px;
-        width: 100rem;
-        height: 5rem;
-        max-width: 500px;
-        max-height: 500px;
+        width: 40%;
+        height: 10%;
         font-size: 4.5vw;
-        transform: translate(0%, 600%);
     }
 
         
@@ -228,7 +224,7 @@ footer {
         color: #FBE48C;
         font-weight: bold;
         height: 10vh; 
-        position: absolute;
+        position: fixed;
     }
 
     .text {
@@ -242,21 +238,11 @@ footer {
 
     .preview{
         width: 20vw;
-        
     }
 
     .newNote{
         font-size: 2.5vw;
         width: 20vw;
-    }
-
-    .BtnRemove:active, .BtnAdd:active{
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-        transform: translate(0%, 600%) scale(0.95);
-    }
-
-    footer{
-        width: 94.1%;
     }
 
     }

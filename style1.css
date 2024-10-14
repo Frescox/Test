@@ -218,6 +218,7 @@ footer {
         max-width: 500px;
         max-height: 500px;
         font-size: 4.5vw;
+        transform: translate(0%, 600%);
     }
 
         
@@ -251,7 +252,11 @@ footer {
 
     .BtnRemove:active, .BtnAdd:active{
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-        transform: translate(0%, 500%) scale(0.95);
+        transform: translate(0%, 600%) scale(0.95);
+    }
+
+    footer{
+        width: 94.1%;
     }
 
     }

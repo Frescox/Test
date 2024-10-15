@@ -274,10 +274,10 @@ footer {
       
         /* Alinea los botones a la derecha */
         .BtnAdd, .BtnRemove {
-            width: 35%;  /* Ajusta el tamaño de los botones */
-            left: 75%;  /* Añade espacio a la derecha */
+            width: 35%; 
+            left: 75%;  
             height: auto;
-            top: unset;  /* Elimina las posiciones top */
+            top: unset;  
             font-size: 5vw;
         }
       

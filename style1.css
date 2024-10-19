@@ -28,7 +28,7 @@ header {
 }
 
 .notes_Created {
-    margin-top: 1%;
+    margin-top: 5%;
     padding: 0;
 }
 
@@ -145,7 +145,7 @@ main {
 #textInput {
     font-family: "Dosis", sans-serif;
     border-radius: 20px;
-    font-size: 3vw;
+    font-size: 4vw;
     background-image: url("background_notePad.png");
     background-size:auto;
     background-repeat: repeat;

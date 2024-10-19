@@ -88,7 +88,7 @@ main {
     width: 100%; /* Ancho del contenedor al 100% */
     height: 85vh; /* Altura fija para que todas las notas estén alineadas */
     position: fixed; /* Mantiene el contenedor en la misma posición */
-    transform: translate(15%, 29%); /* Asegura que esté centrado */
+    transform: translate(15%, 25%); /* Asegura que esté centrado */
     overflow:visible;
 }
 
@@ -145,7 +145,7 @@ main {
 #textInput {
     font-family: "Dosis", sans-serif;
     border-radius: 20px;
-    font-size: 4vw;
+    font-size: 5vw;
     background-image: url("background_notePad.png");
     background-size:auto;
     background-repeat: repeat;

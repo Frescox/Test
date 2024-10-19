@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Notes</title>
+</head>
+<body id = "body">
+    <header id = "header">
+        <label class="container_Notes_Created">
+            <p class="notes_Created">Notas creadas</p>
+        </label>
+        <label class="container_Text">
+            <p class="text">Hola mi nombre es...</p>
+        </label>
+    </header>
+
+    <main id = "main">
+        <button id="previosuNote" class="Btnleft"></button>
+        <div  id = "containerNotes" class="containerNotes">
+            <label class = "label" id = "label">
+                No hay notas creadas
+            </label>
+            <div id = "note" class = "note">
+                <textarea id="textInput" placeholder="¡Escribe tus notas!" rows="5"></textarea>
+            </div>
+        </div>
+        <button id="nextNote" class="Btnright"></button>
+    </main>
+
+    <footer id = "footer">
+        <button id="BtnGoBack1" class="BtnGoBack1"></button>
+        <button id="newNote" class="newNote">Nueva Nota</button>
+    </footer>
+
+    <script src="inicio_notas.js"></script>
+</body>
+</html>

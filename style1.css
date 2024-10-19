@@ -1,0 +1,287 @@
+body {
+    font-family: "Dosis", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8EAAF5;
+    text-align: center;
+    color: #FFF2F2;
+}
+
+header {
+    background-color: #8EAAF5;
+    color: #8EAAF5;
+    font-weight: 800;
+    font-size: 5vw; 
+    padding: 2vh; 
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.container_Notes_Created {
+    font-size: 6vw;
+    color: #FBE48C;
+    font-weight: bold;
+    height: 10vh; 
+    position: fixed;
+    z-index: -1;
+}
+
+.notes_Created {
+    margin-top: 1%;
+    padding: 0;
+}
+
+.container_Text {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    background-color: white;
+    top: 10%;
+    position: fixed;
+    z-index: -1;
+}
+
+.text {
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 7vw;
+    color: #5f8aea;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+main {
+    justify-content: center;
+    display: grid;
+}
+
+.Btnleft{
+    background-image: url("izquierdaa.png");
+    top: 50%;
+    position: fixed;
+    left: 3%;
+    transform: translate(-20%, -50%);
+
+}
+
+.Btnright, .Btnleft{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 19%;
+    height: 7.5%;
+    position: fixed;
+    border: none;
+    cursor: pointer; 
+    background-color: transparent;
+    transition: filter 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+
+}
+
+.containerNotes {
+    display: flex; /* Usa flex para alinear elementos en fila */
+    flex-direction: row; /* Asegura que los elementos se coloquen en fila */
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    white-space: nowrap; /* Evita que las notas salten a una nueva línea */
+    width: 100%; /* Ancho del contenedor al 100% */
+    height: 85vh; /* Altura fija para que todas las notas estén alineadas */
+    position: fixed; /* Mantiene el contenedor en la misma posición */
+    transform: translate(15%, 29%); /* Asegura que esté centrado */
+    overflow:visible;
+}
+
+.label{
+    background-image: url("background_notePad.png");
+    color: black;
+    font-family: "Roboto";
+    font-weight: bold;
+    width: 50vw;
+    height: 20vh;
+    justify-content: center;
+    padding-top: 23.5%;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: 4vw;
+    border-radius: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Mantén tus clases CSS para manejar la posición fuera de pantalla y la transición */
+.note {
+    position: absolute;
+    width: 70vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 20px;
+    left: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(100%); /* Fuera de la pantalla hacia la derecha por defecto */
+    opacity: 0;
+}
+
+.note.active {
+    transform: translateX(0); /* Entra en la pantalla */
+    opacity: 1;
+}
+
+.hidden-left {
+    transform: translateX(-100%); /* Se mueve fuera de la pantalla hacia la izquierda */
+    opacity: 0;
+}
+
+.hidden-right {
+    transform: translateX(100%); /* Se mueve fuera de la pantalla hacia la derecha */
+    opacity: 0;
+}
+
+#textInput {
+    font-family: "Dosis", sans-serif;
+    border-radius: 20px;
+    font-size: 3vw;
+    background-image: url("background_notePad.png");
+    background-size:auto;
+    background-repeat: repeat;
+    line-height: 6vh;
+    overflow-y: auto;
+    width: 70vw;
+    height: 60vh;
+    padding-top: 4%;
+    padding-left: 6.5%;
+    padding-right: 6.5%;
+    overflow: scroll;
+    background-color: #f0f0f0; 
+}
+
+#textInput::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;  
+}
+
+
+
+.Btnright{
+    background-image: url("botonDerechaa.png");
+    top: 50%;
+    left: 19%;
+    transform: translate(330%, -50%);
+}
+
+.BtnGoBack1 {
+    background-image: url("botones-03.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 19%;
+    height: 7.5%;
+    top: 95.5%;
+    position: fixed;
+    z-index: 1;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.newNote{
+    background-color: #8EAAF5;
+    width: 40%;
+    height: 7%;
+    position: fixed;
+    border-radius: 15px;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    border-color: #8EAAF5;
+    font-family: "Roboto";
+    font-size: 6vw;
+    color: #F8E48C;
+    font-weight: bold;
+    transition: filter 0.3s ease, transform 0.2s ease;
+    top: 95%;
+    z-index: 20;
+}
+
+.BtnGoBack1:hover, .Btnleft:hover, .Btnright:hover, .newNote:hover{
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+}
+
+.BtnGoBack1:active, .newNote:active{
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.Btnright:active {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transform: translate(345%, -50%) scale(0.95);
+}
+
+.Btnleft:active {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transform: translate(-30%, -50%) scale(0.95);
+}
+
+footer {
+    background-color: #F8E48C;
+    color: #FFF2F2;
+    text-align: center;
+    padding: 5vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media only screen and (min-width: 840px) {
+
+
+    .notePad {
+        width: 20vw; 
+        height: 90vh;
+        max-height: 320px;
+        min-width: 170px;
+        top: 31%;
+    }
+
+    .BtnAdd, .BtnRemove {
+        font-size: 20px;
+        width: 40%;
+        height: 10%;
+        font-size: 4.5vw;
+    }
+
+        
+    .container_Notes_Created {
+        font-family: "Roboto";
+        font-size: 3vw;
+        color: #FBE48C;
+        font-weight: bold;
+        height: 10vh; 
+        position: fixed;
+    }
+
+    .text {
+        text-align: center;
+        font-family: "Roboto";
+        font-size: 4vw;
+        color: #5f8aea;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .preview{
+        width: 20vw;
+    }
+
+    .newNote{
+        font-size: 2.5vw;
+        width: 20vw;
+    }
+
+    }

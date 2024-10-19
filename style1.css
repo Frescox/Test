@@ -239,23 +239,6 @@ footer {
 }
 
 @media only screen and (min-width: 840px) {
-
-
-    .notePad {
-        width: 20vw; 
-        height: 90vh;
-        max-height: 320px;
-        min-width: 170px;
-        top: 31%;
-    }
-
-    .BtnAdd, .BtnRemove {
-        font-size: 20px;
-        width: 40%;
-        height: 10%;
-        font-size: 4.5vw;
-    }
-
         
     .container_Notes_Created {
         font-family: "Roboto";
@@ -275,13 +258,16 @@ footer {
         margin-top: 20px;
     }
 
-    .preview{
-        width: 20vw;
+    .Btnright, .Btnleft{
+        height: 5%;
     }
 
     .newNote{
         font-size: 2.5vw;
         width: 20vw;
     }
-
-    }
+      
+    #textInput {
+        height: 50vh;
+        }
+}

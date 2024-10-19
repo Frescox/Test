@@ -70,7 +70,7 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     width: 19%;
-    height: 7.5%;
+    height: 5%;
     position: fixed;
     border: none;
     cursor: pointer; 
@@ -152,7 +152,7 @@ main {
     line-height: 6vh;
     overflow-y: auto;
     width: 70vw;
-    height: 60vh;
+    height: 50vh;
     padding-top: 4%;
     padding-left: 6.5%;
     padding-right: 6.5%;
@@ -258,16 +258,13 @@ footer {
         margin-top: 20px;
     }
 
-    .Btnright, .Btnleft{
-        height: 5%;
-    }
-
     .newNote{
         font-size: 2.5vw;
         width: 20vw;
     }
-      
-    #textInput {
-        height: 50vh;
-        }
+
+    .Btnright, .Btnleft{
+        height: 7.5%;
+    }
+
 }

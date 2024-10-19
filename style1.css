@@ -28,7 +28,7 @@ header {
 }
 
 .notes_Created {
-    margin-top: 5%;
+    margin-top: 9%;
     padding: 0;
 }
 
@@ -93,14 +93,14 @@ main {
 }
 
 .label{
-    background-image: url("background_notePad.png");
+    background-color: rgb(107, 156, 229);
     color: black;
     font-family: "Roboto";
     font-weight: bold;
     width: 50vw;
     height: 20vh;
     justify-content: center;
-    padding-top: 23.5%;
+    padding-top: 20%;
     margin-left: 10%;
     margin-top: 5%;
     font-size: 4vw;

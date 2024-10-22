@@ -110,13 +110,22 @@ main {
     margin-top: 5%;
     font-size: 4vw;
     border-radius: 20px;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
     z-index: 0;
 }
 
 .hidden {
     display: none;
     pointer-events: none; 
+}
+
+.pared{
+    background-color:#8EAAF5;
+    width: 15vw;
+    height: 65vh;
+    left: 88%;
+    top:23%;
+    position: fixed;
 }
 
 .note {

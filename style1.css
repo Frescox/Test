@@ -90,10 +90,10 @@ main {
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
-    width: 100%;
-    height: 85vh;
+    width: 90%;
+    height: 50vh;
     position: fixed;
-    transform: translate(15%, 25%);
+    transform: translate(5%, 48%);
     overflow: visible;
 }
 
@@ -106,16 +106,17 @@ main {
     height: 20vh;
     justify-content: center;
     padding-top: 20%;
-    margin-left: 10%;
+    margin-left: 23%;
     margin-top: 5%;
     font-size: 4vw;
     border-radius: 20px;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
-
+    z-index: 0;
 }
 
 .hidden {
     display: none;
+    pointer-events: none; 
 }
 
 .note {
@@ -131,18 +132,22 @@ main {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     transform: translateX(100%);
     opacity: 0;
-    gap: 10%;
+    margin: 20%;
+    top: -30%;
+    left: -8%;
 }
 
 .note.active {
     transform: translateX(0);
     opacity: 1;
+    
 }
 
 .hidden-left {
     transform: translateX(-100%);
     opacity: 0;
-    pointer-events: none;
+    pointer-events: none; 
+
 }
 
 .hidden-right {
@@ -166,6 +171,7 @@ main {
     padding-left: 6.5%;
     padding-right: 6.5%;
     background-color: #f0f0f0;
+    transform: translate(0%, 0%);
 }
 
 #textInput::-webkit-scrollbar {
@@ -246,7 +252,7 @@ footer {
 
 .container_numberNote{
     position: fixed;
-    top:  88%;
+    top:  90vh;
     z-index: 100;
     color:  #8EAAF5;
     font-family: "Dosis";

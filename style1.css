@@ -120,11 +120,11 @@ main {
 }
 
 .pared{
-    background-color:#8EAAF5;
+    background-color: black;
     width: 15vw;
-    height: 65vh;
+    height: 66vh;
     left: 88%;
-    top:23%;
+    top:22%;
     position: fixed;
 }
 
@@ -142,7 +142,7 @@ main {
     transform: translateX(100%);
     opacity: 0;
     margin: 20%;
-    top: -30%;
+    top: -27%;
     left: -8%;
 }
 
@@ -261,7 +261,7 @@ footer {
 
 .container_numberNote{
     position: fixed;
-    top:  90vh;
+    top:  91%;
     z-index: 100;
     color:  #8EAAF5;
     font-family: "Dosis";

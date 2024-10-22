@@ -9,19 +9,14 @@ for (let i = 0; i < btnNoteElements.length; i++) {
 
 const textInput = document.getElementById('textInput');
 
-// Cambiar el tamaño y ocultar otros elementos al hacer clic
-textInput.addEventListener('click', function() {
-    textInput.classList.toggle('active'); // Alterna la clase 'active'
-
-    $('#header').fadeToggle(); // Oculta el footer
-    $('#footer').fadeToggle(); // Oculta el footer
-});
-
 
 let currentElement = -1; // No hay elementos al principio
 const elements = [];
 const container = document.getElementById('containerNotes');
 const label = document.getElementById('label');
+let numberNote = document.getElementById('numberNote')
+const left = document.getElementById('previousNote');
+const right = document.getElementById('nextNote');
 
 // Función para crear un nuevo elemento con un textarea dentro
 function createNewElement() {
@@ -41,8 +36,12 @@ function createNewElement() {
     // Si es el primer elemento, mostrarlo inmediatamente
     if (elements.length === 1) {
         currentElement = 0;
+        numberNote.innerHTML = "Nota " + (currentElement + 1);
         newElement.classList.add('active'); // Lo hacemos activo sin transición
         label.classList.add('hidden');
+        left.style.display = 'none';
+        right.style.display = 'none';
+
     }else{
     // Si no está en el último elemento
     if (currentElement < elements.length - 1) {
@@ -50,6 +49,7 @@ function createNewElement() {
         for (let i = currentElement; i < elements.length; i++) {
             showNextElement();
         }
+        right.style.display = 'none';
     }
 }
 }
@@ -67,7 +67,14 @@ function showNextElement() {
         // Mover el siguiente elemento al centro
         elements[currentElement].classList.remove('hidden-right', 'hidden-left');
         elements[currentElement].classList.add('active');
+
+        numberNote.innerHTML = "Nota " + (currentElement + 1);
+        left.style.display = 'block'
     }
+    if (currentElement == elements.length -1){
+        right.style.display = 'none'
+    }
+
 }
 
 // Función para mostrar el elemento anterior con transición
@@ -83,10 +90,16 @@ function showPrevElement() {
         // Mover el elemento anterior al centro
         elements[currentElement].classList.remove('hidden-right', 'hidden-left');
         elements[currentElement].classList.add('active');
+
+        numberNote.innerHTML = "Nota " + (currentElement + 1);
+        right.style.display = 'block'
+    }
+    if (currentElement == 0){
+        left.style.display = 'none'
     }
 }
 
 // Listeners para los botones
 document.getElementById('newNote').addEventListener('click', createNewElement);
 document.getElementById('nextNote').addEventListener('click', showNextElement);
-document.getElementById('previosuNote').addEventListener('click', showPrevElement);
+document.getElementById('previousNote').addEventListener('click', showPrevElement);

@@ -13,12 +13,13 @@
             <p class="notes_Created">Notas creadas</p>
         </label>
         <label class="container_Text">
-            <p class="text">Hola mi nombre es...</p>
+            <p class="text">Hola</p>
+            <button id="newNote" class="newNote">Nueva Nota</button>
         </label>
     </header>
 
     <main id = "main">
-        <button id="previosuNote" class="Btnleft"></button>
+        <button id="previousNote" class="Btnleft"></button>
         <div  id = "containerNotes" class="containerNotes">
             <label class = "label" id = "label">
                 No hay notas creadas
@@ -32,8 +33,10 @@
 
     <footer id = "footer">
         <button id="BtnGoBack1" class="BtnGoBack1"></button>
-        <button id="newNote" class="newNote">Nueva Nota</button>
-    </footer>
+            <label class="container_numberNote">
+                <p id = "numberNote" class="numberNote">No hay notas</p>
+            </label>    
+        </footer>
 
     <script src="inicio_notas.js"></script>
 </body>

@@ -1,3 +1,7 @@
+* {
+    font-family: "Dosis", sans-serif;
+}
+
 body {
     font-family: "Dosis", sans-serif;
     margin: 0;
@@ -37,15 +41,18 @@ header {
     height: 10%;
     position: absolute;
     background-color: white;
-    top: 10%;
+    top: 11%;
     position: fixed;
     z-index: -1;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
 }
 
 .text {
     text-align: center;
-    font-family: "Roboto";
-    font-size: 7vw;
+    font-family: "Dosis", sans-serif;
+    font-size: 6vw;
     color: #5f8aea;
     font-weight: bold;
     margin-top: 20px;
@@ -56,16 +63,15 @@ main {
     display: grid;
 }
 
-.Btnleft{
+.Btnleft {
     background-image: url("izquierdaa.png");
     top: 50%;
     position: fixed;
     left: 3%;
     transform: translate(-20%, -50%);
-
 }
 
-.Btnright, .Btnleft{
+.Btnright, .Btnleft {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -77,25 +83,24 @@ main {
     background-color: transparent;
     transition: filter 0.3s ease, transform 0.2s ease;
     z-index: 10;
-
 }
 
 .containerNotes {
-    display: flex; /* Usa flex para alinear elementos en fila */
-    flex-direction: row; /* Asegura que los elementos se coloquen en fila */
-    overflow-x: auto; /* Habilita el desplazamiento horizontal */
-    white-space: nowrap; /* Evita que las notas salten a una nueva línea */
-    width: 100%; /* Ancho del contenedor al 100% */
-    height: 85vh; /* Altura fija para que todas las notas estén alineadas */
-    position: fixed; /* Mantiene el contenedor en la misma posición */
-    transform: translate(15%, 25%); /* Asegura que esté centrado */
-    overflow:visible;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    height: 85vh;
+    position: fixed;
+    transform: translate(15%, 25%);
+    overflow: visible;
 }
 
-.label{
+.label {
     background-color: rgb(107, 156, 229);
-    color: black;
-    font-family: "Roboto";
+    color:  #F8E48C;
+    font-family: "Dosis", sans-serif;
     font-weight: bold;
     width: 50vw;
     height: 20vh;
@@ -105,13 +110,14 @@ main {
     margin-top: 5%;
     font-size: 4vw;
     border-radius: 20px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-/* Mantén tus clases CSS para manejar la posición fuera de pantalla y la transición */
 .note {
     position: absolute;
     width: 70vw;
@@ -123,23 +129,26 @@ main {
     border-radius: 20px;
     left: 0;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    transform: translateX(100%); /* Fuera de la pantalla hacia la derecha por defecto */
+    transform: translateX(100%);
     opacity: 0;
+    gap: 10%;
 }
 
 .note.active {
-    transform: translateX(0); /* Entra en la pantalla */
+    transform: translateX(0);
     opacity: 1;
 }
 
 .hidden-left {
-    transform: translateX(-100%); /* Se mueve fuera de la pantalla hacia la izquierda */
+    transform: translateX(-100%);
     opacity: 0;
+    pointer-events: none;
 }
 
 .hidden-right {
-    transform: translateX(100%); /* Se mueve fuera de la pantalla hacia la derecha */
+    transform: translateX(100%);
     opacity: 0;
+    pointer-events: none;
 }
 
 #textInput {
@@ -147,7 +156,7 @@ main {
     border-radius: 20px;
     font-size: 5vw;
     background-image: url("background_notePad.png");
-    background-size:auto;
+    background-size: auto;
     background-repeat: repeat;
     line-height: 6vh;
     overflow-y: auto;
@@ -156,18 +165,15 @@ main {
     padding-top: 4%;
     padding-left: 6.5%;
     padding-right: 6.5%;
-    overflow: scroll;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
 }
 
 #textInput::-webkit-scrollbar {
     width: 0px;
-    background: transparent;  
+    background: transparent;
 }
 
-
-
-.Btnright{
+.Btnright {
     background-image: url("botonDerechaa.png");
     top: 50%;
     left: 19%;
@@ -191,29 +197,29 @@ main {
     transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-.newNote{
-    background-color: #8EAAF5;
-    width: 40%;
+.newNote {
+    background-color: #F8E48C;
+    width: 35%;
     height: 7%;
     position: fixed;
     border-radius: 15px;
-    left: 70%;
+    left: 80%;
     transform: translate(-50%, -50%);
-    border-color: #8EAAF5;
-    font-family: "Roboto";
-    font-size: 6vw;
-    color: #F8E48C;
+    border-color: #F8E48C;
+    font-family: "Dosis", sans-serif;
+    font-size: 5vw;
+    color: #8EAAF5;
     font-weight: bold;
     transition: filter 0.3s ease, transform 0.2s ease;
-    top: 95%;
+    top: 16%;
     z-index: 20;
 }
 
-.BtnGoBack1:hover, .Btnleft:hover, .Btnright:hover, .newNote:hover{
+.BtnGoBack1:hover, .Btnleft:hover, .Btnright:hover, .newNote:hover {
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
 }
 
-.BtnGoBack1:active, .newNote:active{
+.BtnGoBack1:active, .newNote:active {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transform: translate(-50%, -50%) scale(0.95);
 }
@@ -238,33 +244,44 @@ footer {
     width: 100%;
 }
 
+.container_numberNote{
+    position: fixed;
+    top:  88%;
+    z-index: 100;
+    color:  #8EAAF5;
+    font-family: "Dosis";
+    font-weight: bold;
+    font-size: 5vw;
+    left: 50%;
+    width: 40vw;
+    height: 8vh;
+}
+
 @media only screen and (min-width: 840px) {
-        
     .container_Notes_Created {
-        font-family: "Roboto";
+        font-family: "Dosis", sans-serif;
         font-size: 3vw;
         color: #FBE48C;
         font-weight: bold;
-        height: 10vh; 
+        height: 10vh;
         position: fixed;
     }
 
     .text {
         text-align: center;
-        font-family: "Roboto";
+        font-family: "Dosis", sans-serif;
         font-size: 4vw;
         color: #5f8aea;
         font-weight: bold;
         margin-top: 20px;
     }
 
-    .newNote{
+    .newNote {
         font-size: 2.5vw;
         width: 20vw;
     }
 
-    .Btnright, .Btnleft{
+    .Btnright, .Btnleft {
         height: 7.5%;
     }
-
 }

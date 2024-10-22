@@ -1,15 +1,3 @@
-const btnNoteElements = document.getElementsByClassName('Note0');
-
-for (let i = 0; i < btnNoteElements.length; i++) {
-    btnNoteElements[i].addEventListener('click', function() {
-        console.log('Este div funciona');
-    });
-}
-
-
-const textInput = document.getElementById('textInput');
-
-
 let currentElement = -1; // No hay elementos al principio
 const elements = [];
 const container = document.getElementById('containerNotes');
@@ -19,16 +7,24 @@ const left = document.getElementById('previousNote');
 const right = document.getElementById('nextNote');
 
 // Función para crear un nuevo elemento con un textarea dentro
-function createNewElement() {
+function createNewElement(content = '') {
     const newElement = document.createElement('div');
     newElement.classList.add('note'); // Añadir clase de la nota
-    newElement.id = note
 
     // Crear el textarea dentro del nuevo div
     const textArea = document.createElement('textarea');
     textArea.placeholder = `Escribe algo en el Elemento ${elements.length + 1}`;
-    textArea.id = `textInput`
+    textArea.id = `textInput${elements.length + 1}`;
+    textArea.className = 'textInput';
+
+    // Asignar contenido previo si hay
+    textArea.value = content;
+
+    textArea.addEventListener('input', () => {
+        saveNotes(); // Llama a la función sin pasar 'event'
+    });
     
+
     newElement.appendChild(textArea); // Añadir el textarea al div
     container.appendChild(newElement); // Añadir el div al contenedor
     elements.push(newElement);
@@ -41,17 +37,16 @@ function createNewElement() {
         label.classList.add('hidden');
         left.style.display = 'none';
         right.style.display = 'none';
-
-    }else{
-    // Si no está en el último elemento
-    if (currentElement < elements.length - 1) {
-        // Recorremos hasta el último elemento
-        for (let i = currentElement; i < elements.length; i++) {
-            showNextElement();
+    } else {
+        // Si no está en el último elemento
+        if (currentElement < elements.length - 1) {
+            // Recorremos hasta el último elemento
+            for (let i = currentElement; i < elements.length; i++) {
+                showNextElement();
+            }
+            right.style.display = 'none';
         }
-        right.style.display = 'none';
     }
-}
 }
 
 // Función para mostrar el siguiente elemento con transición
@@ -70,11 +65,12 @@ function showNextElement() {
 
         numberNote.innerHTML = "Nota " + (currentElement + 1);
         left.style.display = 'block'
+        saveNotes();
+
     }
     if (currentElement == elements.length -1){
         right.style.display = 'none'
     }
-
 }
 
 // Función para mostrar el elemento anterior con transición
@@ -93,13 +89,58 @@ function showPrevElement() {
 
         numberNote.innerHTML = "Nota " + (currentElement + 1);
         right.style.display = 'block'
+        saveNotes();
+
     }
     if (currentElement == 0){
         left.style.display = 'none'
     }
 }
 
+function saveNotes() {
+    const notes = [];
+    const allTextAreas = document.querySelectorAll('textarea');
+
+    allTextAreas.forEach(textArea => {
+        notes.push(textArea.value); // Agrega el valor del textarea al array
+    });
+
+    localStorage.setItem('notes', JSON.stringify(notes)); // Guarda el array en localStorage
+    localStorage.setItem('notesTimestamp', Date.now()); // Guarda la fecha actual
+}
+
+// Cargar notas del localStorage al iniciar
+function loadNotes() {
+    const storedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+    storedNotes.forEach(note => {
+        createNewElement(note); // Crea cada nota desde el localStorage
+    });
+}
+
+// Verificar si las notas deben eliminarse
+function checkNotesExpiration() {
+    const timestamp = localStorage.getItem('notesTimestamp');
+    const oneDayInMillis = 6 * 60 * 60 * 1000; // Un día en milisegundos
+
+    if (timestamp && (Date.now() - timestamp > oneDayInMillis)) {
+        localStorage.removeItem('notes'); // Elimina las notas del localStorage
+        localStorage.removeItem('notesTimestamp'); // Elimina la fecha
+    }
+}
+
+// Al cargar la página, verifica si las notas han expirado
+checkNotesExpiration();
+
+// Llamar a la función para cargar las notas al iniciar
+loadNotes();
+
+function goBack1(){
+    saveNotes();
+}
+
+
 // Listeners para los botones
-document.getElementById('newNote').addEventListener('click', createNewElement);
+document.getElementById('newNote').addEventListener('click', () => createNewElement(''));
 document.getElementById('nextNote').addEventListener('click', showNextElement);
 document.getElementById('previousNote').addEventListener('click', showPrevElement);
+document.getElementById('BtnGoBack1').addEventListener('click', goBack1);

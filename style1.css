@@ -165,7 +165,7 @@ main {
     pointer-events: none;
 }
 
-#textInput {
+.textInput {
     font-family: "Dosis", sans-serif;
     border-radius: 20px;
     font-size: 5vw;

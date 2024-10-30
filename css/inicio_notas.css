@@ -95,7 +95,7 @@ main {
     white-space: nowrap; 
     width: 80vw; 
     height: 50vh;
-    margin-top: 20vh;
+    margin-top: 18vh;
     margin-left: 10%;
     position: absolute;
     background-color: transparent; 
@@ -330,7 +330,7 @@ footer {
     font-family: "Dosis";
     font-weight: bold;
     font-size:3.3vw;
-    left: 60%;
+    left: 55%;
     width: 40vw;
     height: 8vh;
     align-items: center;

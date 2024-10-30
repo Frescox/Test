@@ -191,6 +191,7 @@ function loadNotes() {
 // Llama a la función para cargar las notas al iniciar
 loadNotes();
 checkAndSaveNotesToDB();
+localStorage.clear();
 
 function saveNotes_DB() {
     const notes = [];

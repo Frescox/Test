@@ -1,5 +1,7 @@
 * {
     font-family: "Dosis", sans-serif;
+    overflow: hidden; 
+    margin: 0;
 }
 
 body {

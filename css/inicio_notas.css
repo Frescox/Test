@@ -19,24 +19,24 @@ body {
 header {
     background-color: #8EAAF5;
     font-size: 5vw; 
-    padding: 2vh; 
+    padding: 1vh; 
     display: flex;
     justify-content: center;
     z-index: -1;
     width: 100%;    
-    height:  7vh;
-    overflow: hidden;
+    height:  10vh;
+    justify-content: center;   
+    align-items: center; 
 }
 
 .container_Notes_Created {
     font-size: 6vw;
     color: #FBE48C;
     font-weight: bold;
-    height: 5vh; 
-    z-index: 1;
+    height: 9vh; 
+    z-index: 5;
     background-color: transparent;
     width: 100%;
-    padding: 1%;
     display: flex;            
     justify-content: center;   
     align-items: center;     

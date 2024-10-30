@@ -96,8 +96,8 @@ main {
     display: flex;
     flex-direction: row;
     white-space: nowrap; 
-    width: 80vw; 
-    height: 50vh;
+    width: 85vw; 
+    height: 52vh;
     margin-top: 18vh;
     margin-left: 10%;
     position: absolute;

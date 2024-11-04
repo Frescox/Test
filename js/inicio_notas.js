@@ -9,7 +9,7 @@ const yes = document.getElementById('save');
 const not = document.getElementById('noSave');
 const newNote = document.getElementById('newNote');
 const back = document.getElementById('BtnGoBack1');
-
+ localStorage.clear();
 
 // Función para crear un nuevo elemento con un textTarea dentro
 function createNewElement(content = '') {
